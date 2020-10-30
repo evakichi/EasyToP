@@ -11,3 +11,12 @@ We have a plan to implement the folowing capabilisies,
 4. Execution time analysis.
 
 These capabilitites are going to use functionalities of Clang/LLVM.
+
+Above capabilities are running with major IDE or text editor using LSP(Language Server Protocol)
+
+This framework is inteded the following rules,
+
+1. EazyToP provides the result of paralelliam analysis and Execuition time analysis,
+2. Editing program and decesion making of parallelize is user's(programmer's) role. In other word, EasyToP cannnot edit the program, except inserting OpenMP or OpenACC directive.
+
+These rules are promoted maintain of human-readbility for source code. 
