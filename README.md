@@ -16,7 +16,7 @@ Above capabilities are running with major IDE or text editor using LSP(Language 
 
 This framework is inteded the following rules,
 
-1. EazyToP provides the result of paralelliam analysis and xecuition time analysis,
+1. EazyToP provides the result of paralelliam analysis and execuition time analysis,
 2. Editing program and decesion making of parallelize is user's(programmer's) role. In other word, EasyToP cannnot edit the program, except inserting OpenMP or OpenACC directive.
 
 These rules are promoted maintain of human-readbility for source code. 
