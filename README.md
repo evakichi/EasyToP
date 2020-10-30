@@ -20,3 +20,5 @@ This framework is inteded the following rules,
 2. Editing program and decesion making of parallelize is user's(programmer's) role. In other word, EasyToP cannnot edit the program, except inserting OpenMP or OpenACC directive.
 
 These rules are promoted maintain of human-readbility for source code. 
+
+Let's enjoy parallelization life!!
