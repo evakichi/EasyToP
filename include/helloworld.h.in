@@ -1,0 +1,2 @@
+#define helloworld_VERSION_MAJOR @helloworld_VERSION_MAJOR@
+#define helloworld_VERSION_MINOR @helloworld_VERSION_MINOR@
