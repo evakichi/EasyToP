@@ -1,9 +1,4 @@
 #include <iostream>
-#include <type_traits>
-#include "clang-c/Index.h"
-
-using namespace std;
-#include <iostream>
 #include <clang-c/Index.h>
 using namespace std;
 
