@@ -2,6 +2,6 @@
 using namespace std;
 int main()
 {
-	cout << "This is struct changer." << endl;
+	cout << "This is optimizer." << endl;
 	return 1;
 }
