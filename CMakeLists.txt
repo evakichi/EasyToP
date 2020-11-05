@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project(helloworld VERSION 0.5)
 enable_testing()
 add_subdirectory(sources)
+add_subdirectory(libs)
 add_subdirectory(tests)
 
 configure_file(include/helloworld.h.in include/helloworld.h)
