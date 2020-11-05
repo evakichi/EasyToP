@@ -5,7 +5,7 @@ This application is an interactive parallelizing assitance tool.
 
 We have a plan to implement the folowing capabilisies,
 
-1. EasyToP parallelizer: Parallism analysis for OpenMP and OpenACC,
+1. EasyToP Parallelizer: Parallism analysis for OpenMP and OpenACC,
 2. EasyToP Directive Creator: OpenMP or OpenACC directive creation,
 3. EasyToP Optimizer: Program restructureing(is not refactoring),
 4. EasyToP Measure: Execution time analysis.
