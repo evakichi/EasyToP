@@ -2,6 +2,6 @@
 using namespace std;
 int main()
 {
-	cout << "This is parallelizer." << endl;
+	cout << "This is analyzer." << endl;
 	return 1;
 }
