@@ -1,5 +1,5 @@
 add_executable(helloworld helloworld.c)
 add_executable(parallelizer parallelizer.cpp)
-add_executable(pragma_creater pragma_creater.cpp)
-add_executable(struct_changer struct_changer.cpp)
+add_executable(creater creater.cpp)
+add_executable(changer changer.cpp)
 add_executable(measure measure.cpp)
