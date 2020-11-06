@@ -11,7 +11,7 @@ main(int argc,char *argv[])
 
 	CXType type = clang_getCursorType(cursor);
 	CXString typeSpelling = clang_getTypeSpelling(type);
-	cout << clang_getCString(typeSpelling) << endl;
+	cout << "test:" << clang_getCString(typeSpelling) << endl;
 
 	clang_disposeTranslationUnit(TU);
 	clang_disposeIndex(Idx);

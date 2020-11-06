@@ -9,6 +9,13 @@ ostream &operator<<(ostream &stream, const CXString &str)
 	return stream;
 }
 
+
+CXChildVisitResult cvisit(CXCursor cursor, CXCursor parent, CXClientData client_data)
+{
+	cout << clang_getCursorSpelling(cursor) << endl;
+	cout << clang_getCursorKindSpelling(clang_getCursorKind(cursor)) << endl;
+	return CXChildVisit_Recurse;
+}
 int main(int argc, char *argv[])
 {
 	CXIndex index = clang_createIndex(0, 0);
@@ -27,8 +34,16 @@ int main(int argc, char *argv[])
 	clang_visitChildren(
 		cursor,
 		[](CXCursor c, CXCursor parent, CXClientData client_data) {
-			cout << "Cursor '" << clang_getCursorSpelling(c) << "' of kind '"
-				 << clang_getCursorKindSpelling(clang_getCursorKind(c)) << "'\n";
+			if (clang_getCursorKind(c) == CXCursor_ForStmt)
+			{
+				cout << "It's For loop!!" << endl;
+				cout << clang_getCursorSpelling(c) << endl;
+				clang_visitChildren(c,cvisit,nullptr);
+			}				
+			else
+				cout << "Cursor '" << clang_getCursorSpelling(c) << "' of kind '"
+					 << clang_getCursorKindSpelling(clang_getCursorKind(c))  
+				 	<< "' parent '" << clang_getCursorSpelling(parent) << "'\n";
 			return CXChildVisit_Recurse;
 		},
 		nullptr);
