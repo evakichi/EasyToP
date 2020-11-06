@@ -10,8 +10,9 @@ ostream &operator<<(ostream &stream, const CXString &str)
 }
 
 
-CXChildVisitResult cvisit(CXCursor cursor, CXCursor parent, CXClientData client_data)
+CXChildVisitResult cVisitForloop(CXCursor cursor, CXCursor parent, CXClientData client_data)
 {
+	cout << clang_getCursorSpelling(cursor) << endl;
 	cout << clang_getCursorSpelling(cursor) << endl;
 	cout << clang_getCursorKindSpelling(clang_getCursorKind(cursor)) << endl;
 	return CXChildVisit_Recurse;
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 		argv[1], nullptr, 0,
 		nullptr, 0,
 		CXTranslationUnit_None);
+
 	if (unit == nullptr)
 	{
 		cerr << "Unable to parse translation unit. Quitting." << endl;
@@ -34,16 +36,28 @@ int main(int argc, char *argv[])
 	clang_visitChildren(
 		cursor,
 		[](CXCursor c, CXCursor parent, CXClientData client_data) {
-			if (clang_getCursorKind(c) == CXCursor_ForStmt)
+			switch (clang_getCursorKind(c))
 			{
+			case CXCursor_ForStmt:
 				cout << "It's For loop!!" << endl;
 				cout << clang_getCursorSpelling(c) << endl;
-				clang_visitChildren(c,cvisit,nullptr);
-			}				
-			else
+				clang_visitChildren(c,cVisitForloop,nullptr);
+				break;
+			case CXCursor_IntegerLiteral:
+				cout << "It's IntegerLiteral!!" <<  clang_EvalResult_getAsInt(clang_Cursor_Evaluate(c)) <<endl;
+				break;
+			case CXCursor_BinaryOperator:
+				cout << "It's binary operator!!" << clang_getTypeSpelling(clang_getCursorType(c)) << endl;
+				break;
+			case CXCursor_UnaryOperator:
+				cout << "It's unary operator!!" << clang_getTypeSpelling(clang_getCursorType(c)) << endl;
+				break;
+			default:
 				cout << "Cursor '" << clang_getCursorSpelling(c) << "' of kind '"
-					 << clang_getCursorKindSpelling(clang_getCursorKind(c))  
+					<< clang_getCursorKindSpelling(clang_getCursorKind(c))  
 				 	<< "' parent '" << clang_getCursorSpelling(parent) << "'\n";
+				break;
+			}
 			return CXChildVisit_Recurse;
 		},
 		nullptr);
