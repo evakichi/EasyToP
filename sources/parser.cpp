@@ -215,3 +215,4 @@ int main(int argc, const char **argv)
 
 
 //clang++ $(llvm-config --cppflags --cxxflags --ldflags)  parser2.cpp   -L$(llvm-config --libdir) -lclang -lclang-cpp $(llvm-config --libs --system-libs)
+//Original from https://qiita.com/Chironian/items/6021d35bf2750341d80c
