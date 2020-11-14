@@ -1,6 +1,9 @@
 link_directories(/usr/local/lib /usr/local/lib64)
 
-add_executable(helloworld helloworld.c)
+add_executable(creater creater.cpp)
+add_executable(optimizer optimizer.cpp)
+add_executable(measure measure.cpp)
+
 add_executable(analyzer analyzer.cpp)
 target_include_directories(analyzer INTERFACE /usr/local/include/ /usr/include/)
 target_link_libraries(analyzer clang)
@@ -28,7 +31,3 @@ target_link_libraries(parser clang-cpp)
 target_link_libraries(parser ${STATIC_LLVM_LIBRARIES})
 target_link_libraries(parser ${STATIC_SYSTEM_LIBRARIES})
 target_link_libraries(parser ${SHARED_SYSTEM_LIBRARIES})
-
-add_executable(creater creater.cpp)
-add_executable(optimizer optimizer.cpp)
-add_executable(measure measure.cpp)
