@@ -5,11 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 #set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_C_COMPILER "/usr/local/bin/clang")
 set(CMAKE_CXX_COMPILER "/usr/local/bin/clang++")
-set(_GNU_SOURCE)
-set(_DEBUG)
-set(__STDC_CONSTANT_MACROS)
-set(__STDC_FORMAT_MACROS)
-set(__STDC_LIMIT_MACROS)
 
 set(STSTIC_SYSTEM_LIBRARIES
     /usr/lib/x86_64-redhat-linux6E/lib64/librt.a
