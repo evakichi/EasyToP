@@ -3,7 +3,7 @@
 
 using namespace std;
 
-main(int argc,char *argv[])
+int main(int argc,char *argv[])
 {
 	CXIndex Idx = clang_createIndex(1,1);
 	CXTranslationUnit TU = clang_createTranslationUnit(Idx, argv[1]);
@@ -15,5 +15,6 @@ main(int argc,char *argv[])
 
 	clang_disposeTranslationUnit(TU);
 	clang_disposeIndex(Idx);
+	return 0;
 }
 

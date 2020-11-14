@@ -49,8 +49,11 @@ int main(int argc, char *argv[])
 			case CXCursor_BinaryOperator:
 				cout << "It's binary operator!!" << clang_getTypeSpelling(clang_getCursorType(c)) << endl;
 				break;
+			case CXCursor_CompoundAssignOperator:
+				cout << "It's compound operator!!" << clang_getCursorDisplayName(c) << clang_getTypeSpelling(clang_getCursorType(c)) << endl;
+				break;
 			case CXCursor_UnaryOperator:
-				cout << "It's unary operator!!" << clang_getTypeSpelling(clang_getCursorType(c)) << endl;
+				cout << "It's unary operator!!" << clang_getCursorDisplayName(c)  << endl;
 				break;
 			default:
 				cout << "Cursor '" << clang_getCursorSpelling(c) << "' of kind '"
