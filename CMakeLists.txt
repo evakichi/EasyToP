@@ -14,6 +14,31 @@ set(STSTIC_SYSTEM_LIBRARIES
 set(SHARED_SYSTEM_LIBRARIES
     /usr/lib64/libz.so
 )
+
+set(STATIC_CLANG_LIBRARIES
+    clangAST.a
+	clangASTMatchers.a
+	clangAnalysis.a
+	clangBasic.a
+	clangDriver.a
+	clangEdit.a	
+    clangFrontend.a
+	clangFrontendTool.a
+	clangLex.a
+    clangParse.a
+	clangSema.a
+	clangEdit.a
+	clangRewrite.a
+	clangRewriteFrontend.a
+	clangStaticAnalyzerFrontend.a
+	clangStaticAnalyzerCheckers.a
+	clangStaticAnalyzerCore.a
+	clangSerialization.a
+	clangToolingCore.a
+	clangTooling.a
+	clangFormat.a
+)
+
 set(STATIC_LLVM_LIBRARIES 
     /usr/local/lib/libLLVMTableGen.a
     /usr/local/lib/libLLVMSymbolize.a
